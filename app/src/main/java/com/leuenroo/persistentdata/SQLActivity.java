@@ -18,14 +18,16 @@ import butterknife.ButterKnife;
 public class SQLActivity extends ListActivity {
     private OrganizerStorage datasource;
     @BindView(R.id.get_toWrite)
+
     EditText mEditText;
+    EditText dEditText;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_s_q_l);
         ButterKnife.bind(this);
-
+        dEditText = findViewById(R.id.get_toDate);
         datasource = new OrganizerStorage(this);
         datasource.open();
 
@@ -49,7 +51,8 @@ public class SQLActivity extends ListActivity {
 
 
                 // save the new comment to the database
-                nt = datasource.createComment(mEditText.getText().toString());
+                nt = datasource.createComment(mEditText.getText().toString(), dEditText.getText().toString());
+               // nt = datasource.createComment(dEditText.getText().toString());
                 adapter.add(nt);
                 break;
             case R.id.delete:

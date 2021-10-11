@@ -7,4 +7,5 @@
     <string name="name">Name</string>
     <string name="fname">Moaath</string>
     <string name="shared_pref">Shared Pref</string>
+    <string name="date">Date</string>
 </resources>

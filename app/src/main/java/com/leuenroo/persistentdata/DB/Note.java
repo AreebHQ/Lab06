@@ -5,6 +5,15 @@ package com.leuenroo.persistentdata.DB;
 public class Note {
     private long id;
     private String note;
+    private String date;
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 
     public long getId() {
         return id;
